@@ -1,0 +1,112 @@
+[
+  {
+    "id": "m1",
+    "title": "Spider-Man: Into the Spider-Verse",
+    "kind": "movie",
+    "year": 2018,
+    "genres": ["Animation", "Action", "Comedy"],
+    "moods": ["Hype", "Feel-good"],
+    "platforms": ["Streaming/Rent"],
+    "duration": "1h 57m",
+    "description": "A stylish, high-energy animated superhero movie with heart and absurdly good visuals."
+  },
+  {
+    "id": "m2",
+    "title": "Knives Out",
+    "kind": "movie",
+    "year": 2019,
+    "genres": ["Mystery", "Comedy"],
+    "moods": ["Cozy", "Clever"],
+    "platforms": ["Streaming/Rent"],
+    "duration": "2h 10m",
+    "description": "A modern whodunit that’s witty, twisty, and fun the whole way through."
+  },
+  {
+    "id": "m3",
+    "title": "Mad Max: Fury Road",
+    "kind": "movie",
+    "year": 2015,
+    "genres": ["Action", "Adventure"],
+    "moods": ["Hype", "Intense"],
+    "platforms": ["Streaming/Rent"],
+    "duration": "2h",
+    "description": "Pure action momentum. Practically a two-hour adrenaline sprint."
+  },
+  {
+    "id": "m4",
+    "title": "The Grand Budapest Hotel",
+    "kind": "movie",
+    "year": 2014,
+    "genres": ["Comedy", "Drama"],
+    "moods": ["Cozy", "Quirky"],
+    "platforms": ["Streaming/Rent"],
+    "duration": "1h 39m",
+    "description": "Whimsical, fast, and visually perfect. A comfort watch with style."
+  },
+  {
+    "id": "m5",
+    "title": "Her",
+    "kind": "movie",
+    "year": 2013,
+    "genres": ["Drama", "Romance", "Sci-Fi"],
+    "moods": ["Chill", "Thoughtful"],
+    "platforms": ["Streaming/Rent"],
+    "duration": "2h 6m",
+    "description": "Quiet sci-fi about loneliness and connection with a warm, dreamy vibe."
+  },
+  {
+    "id": "g1",
+    "title": "Hades",
+    "kind": "game",
+    "year": 2020,
+    "genres": ["Action", "Roguelike"],
+    "moods": ["Hype", "Challenging"],
+    "platforms": ["PC", "Switch", "PlayStation", "Xbox"],
+    "duration": "Runs (20–40 min each)",
+    "description": "Fast combat, great music, and a story that rewards 'one more run.'"
+  },
+  {
+    "id": "g2",
+    "title": "Stardew Valley",
+    "kind": "game",
+    "year": 2016,
+    "genres": ["Simulation", "RPG"],
+    "moods": ["Cozy", "Chill"],
+    "platforms": ["PC", "Switch", "PlayStation", "Xbox", "Mobile"],
+    "duration": "Endless (in a good way)",
+    "description": "Farm, fish, build relationships. Peak cozy game energy."
+  },
+  {
+    "id": "g3",
+    "title": "Portal 2",
+    "kind": "game",
+    "year": 2011,
+    "genres": ["Puzzle", "Comedy"],
+    "moods": ["Clever", "Chill"],
+    "platforms": ["PC", "PlayStation", "Xbox"],
+    "duration": "8–12 hours",
+    "description": "Smart puzzles + hilarious writing. A classic for a reason."
+  },
+  {
+    "id": "g4",
+    "title": "Celeste",
+    "kind": "game",
+    "year": 2018,
+    "genres": ["Platformer"],
+    "moods": ["Challenging", "Thoughtful"],
+    "platforms": ["PC", "Switch", "PlayStation", "Xbox"],
+    "duration": "6–10 hours",
+    "description": "Tight platforming with an honest story. Hard but super fair."
+  },
+  {
+    "id": "g5",
+    "title": "Slay the Spire",
+    "kind": "game",
+    "year": 2019,
+    "genres": ["Strategy", "Roguelike", "Card"],
+    "moods": ["Clever", "Challenging"],
+    "platforms": ["PC", "Switch", "PlayStation", "Xbox", "Mobile"],
+    "duration": "Runs (30–60 min each)",
+    "description": "Deckbuilding roguelike that’s ridiculously replayable."
+  }
+]

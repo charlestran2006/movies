@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Movie & Game Recommender</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>Movie & Game Recommender</h1>
+      <p class="sub">Pick filters (or don’t), click the button, get a recommendation.</p>
+    </header>
+
+    <section class="card">
+      <form method="POST" class="form">
+        <div class="grid">
+          <div class="field">
+            <label for="kind">Type</label>
+            <select id="kind" name="kind">
+              <option value="any" {% if form_state.kind == "any" %}selected{% endif %}>Any</option>
+              {% for k in options.kinds %}
+                <option value="{{ k }}" {% if form_state.kind == k %}selected{% endif %}>
+                  {{ k|capitalize }}
+                </option>
+              {% endfor %}
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="genre">Genre</label>
+            <select id="genre" name="genre">
+              <option value="any" {% if form_state.genre == "any" %}selected{% endif %}>Any</option>
+              {% for g in options.genres %}
+                <option value="{{ g }}" {% if form_state.genre == g %}selected{% endif %}>{{ g }}</option>
+              {% endfor %}
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="mood">Mood</label>
+            <select id="mood" name="mood">
+              <option value="any" {% if form_state.mood == "any" %}selected{% endif %}>Any</option>
+              {% for m in options.moods %}
+                <option value="{{ m }}" {% if form_state.mood == m %}selected{% endif %}>{{ m }}</option>
+              {% endfor %}
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="year_min">Year min</label>
+            <input
+              id="year_min"
+              name="year_min"
+              type="number"
+              min="{{ year_bounds.min }}"
+              max="{{ year_bounds.max }}"
+              value="{{ form_state.year_min }}"
+            />
+          </div>
+
+          <div class="field">
+            <label for="year_max">Year max</label>
+            <input
+              id="year_max"
+              name="year_max"
+              type="number"
+              min="{{ year_bounds.min }}"
+              max="{{ year_bounds.max }}"
+              value="{{ form_state.year_max }}"
+            />
+          </div>
+        </div>
+
+        <!-- Store the last recommendation id so we can avoid repeating -->
+        <input type="hidden" name="last_id" value="{{ form_state.last_id }}"/>
+
+        <div class="actions">
+          <button class="btn" type="submit">🎲 Recommend</button>
+          <a class="link" href="/">Reset</a>
+        </div>
+      </form>
+    </section>
+
+    {% if error %}
+      <section class="card error">
+        <strong>{{ error }}</strong>
+      </section>
+    {% endif %}
+
+    {% if recommendation %}
+      <section class="card result">
+        <div class="meta">
+          <span class="pill">{{ recommendation.kind|capitalize }}</span>
+          <span class="pill">{{ recommendation.year }}</span>
+          {% if matches is not none %}
+            <span class="muted">{{ matches }} match{{ "es" if matches != 1 else "" }} found</span>
+          {% endif %}
+        </div>
+
+        <h2 class="title">{{ recommendation.title }}</h2>
+
+        <div class="chips">
+          {% for g in recommendation.genres %}
+            <span class="chip">{{ g }}</span>
+          {% endfor %}
+          {% for m in recommendation.moods %}
+            <span class="chip chip2">{{ m }}</span>
+          {% endfor %}
+        </div>
+
+        <p class="desc">{{ recommendation.description }}</p>
+
+        <div class="extra">
+          {% if recommendation.platforms and recommendation.platforms|length > 0 %}
+            <div><span class="label">Where:</span> {{ recommendation.platforms|join(", ") }}</div>
+          {% endif %}
+          {% if recommendation.duration %}
+            <div><span class="label">Time:</span> {{ recommendation.duration }}</div>
+          {% endif %}
+        </div>
+
+        <!-- Tiny trick: keep last_id updated for next submit -->
+        <form method="POST" class="re-roll">
+          <input type="hidden" name="kind" value="{{ form_state.kind }}"/>
+          <input type="hidden" name="genre" value="{{ form_state.genre }}"/>
+          <input type="hidden" name="mood" value="{{ form_state.mood }}"/>
+          <input type="hidden" name="year_min" value="{{ form_state.year_min }}"/>
+          <input type="hidden" name="year_max" value="{{ form_state.year_max }}"/>
+          <input type="hidden" name="last_id" value="{{ recommendation.id }}"/>
+          <button class="btn secondary" type="submit">🔁 Another one</button>
+        </form>
+      </section>
+    {% endif %}
+
+    <footer class="footer">
+      <p>Tip: add more items in <code>data/items.json</code> to make this feel like “your” recommender.</p>
+    </footer>
+  </div>
+</body>
+</html>
