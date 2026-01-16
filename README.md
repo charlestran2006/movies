@@ -1,10 +1,3 @@
-That screenshot is VS Code’s markdown preview; it always shows list numbers as “1.” or hides them because markdown auto‑numbers lists for you, even if the raw text has 1., 2., 3..
-​
-​
-
-What to actually put in README.md
-Copy this raw text (no outer ```md block) straight into your README.md file:
-
 🎬🎮 Pickflix
 A Flask-based web application that gives you instant movie or game recommendations based on your mood, genre, and time period. Click a button, get something worth watching or playing — no scrolling, no decision fatigue.
 
