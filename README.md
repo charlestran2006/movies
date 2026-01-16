@@ -9,6 +9,42 @@ Instant Recommendations: One click gives you a random movie or game
 Flexible Filters:
 
 Type (Movie or Game)
+# 🎬🎮 Pickflix
+
+A Flask-based web application that gives you instant movie or game recommendations based on your mood, genre, and year range. Simply choose your preferences (or none at all), click a button, and Pickflix suggests something worth watching or playing.
+
+---
+
+## ✨ Features
+
+- **Instant Recommendations**: One click gives you a random movie or game
+- **Flexible Filtering**:
+  - Type (Movie or Game)
+  - Genre
+  - Mood
+  - Year range
+- **Smart Re-rolls**: Avoids repeating the same recommendation back-to-back
+- **Local Dataset**: Uses a JSON file for data (no database required)
+- **Clean, Minimal UI**: Simple, fast, and distraction-free
+- **Easy to Extend**: Add more items, filters, or external APIs later
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Python 3.9 or higher
+- Git (optional, but recommended)
+
+---
+
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/yourusername/pickflix.git
+   cd pickflix
 
 Genre
 
