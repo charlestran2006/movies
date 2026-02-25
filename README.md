@@ -1,115 +1,148 @@
-🎬🎮 Pickflix
-A Flask-based web application that gives you instant movie or game recommendations based on your mood, genre, and time period. Click a button, get something worth watching or playing — no scrolling, no decision fatigue.
+<div align="center">
 
-✨ Features
-Instant Recommendations: One click gives you a random movie or game
+# 🎬🎮 Pickflix
 
-Flexible Filters: Filter by type (movie or game), genre, mood, and year range
+**A Flask web app that gives you instant movie or game recommendations based on your mood, genre, and time period — no scrolling, no decision fatigue.**
 
-Smart Re-rolls: Avoids repeating the same recommendation back-to-back
+[![Python](https://img.shields.io/badge/Python-3.9%2B-blue?style=flat-square&logo=python&logoColor=white)](https://www.python.org/)
+[![Flask](https://img.shields.io/badge/Flask-3.0.3-black?style=flat-square&logo=flask&logoColor=white)](https://flask.palletsprojects.com/)
+[![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE)
+[![Status](https://img.shields.io/badge/Status-Active-brightgreen?style=flat-square)]()
 
-Local Dataset: Uses a simple JSON file (no database required)
+</div>
 
-Clean, Minimal UI: Focused on speed and usability
+---
 
-Easy to Extend: Simple structure for adding more data, features, or APIs later
+## Overview
 
-🚀 Getting Started
-Prerequisites
-Python 3.9 or higher
+Pickflix solves a simple problem: choosing what to watch or play takes too long. Enter your mood, set a few optional filters, and get a recommendation instantly. Click again to re-roll. That's it.
 
-Git (optional, but recommended)
+Built with Flask and a local JSON dataset — no external API keys, no database setup required.
 
-Installation
-Clone the repository
+---
 
-bash
+## Features
+
+| Feature | Description |
+|---|---|
+| Instant recommendations | One click returns a random movie or game |
+| Flexible filters | Filter by type, genre, mood, and year range |
+| Smart re-rolls | Avoids repeating the same recommendation back-to-back |
+| Local dataset | All data lives in a single JSON file — no database needed |
+| Easy to extend | Simple structure for adding more data, filters, or external APIs |
+
+---
+
+## Getting Started
+
+### Prerequisites
+
+- Python 3.9 or higher
+- Git (optional)
+
+### Installation
+
+**1. Clone the repository**
+
+```bash
 git clone https://github.com/yourusername/pickflix.git
 cd pickflix
-Or download the project folder and navigate into it.
+```
 
-Set up Python virtual environment (recommended)
+**2. Create and activate a virtual environment**
 
-bash
+```bash
 python -m venv .venv
-Windows
+```
 
-bash
+```bash
+# Windows
 .venv\Scripts\activate
-macOS / Linux
 
-bash
+# macOS / Linux
 source .venv/bin/activate
-Install Python dependencies
+```
 
-bash
+**3. Install dependencies**
+
+```bash
 pip install -r requirements.txt
-▶️ Running the Application
-Start the Flask app
+```
 
-bash
+### Running the App
+
+```bash
 python app.py
-Open your browser
+```
 
-Go to http://127.0.0.1:5000
+Then open your browser and go to **http://127.0.0.1:5000**
 
-You’re ready to start getting recommendations.
+---
 
-🔧 How It Works
-Dataset Loading: Movies and games are stored in a local JSON file (data/items.json) and loaded at app startup.
+## How It Works
 
-Filter Selection: Users can optionally filter by type, genre, mood, and year range.
+1. **Dataset Loading** — Movies and games are stored in `data/items.json` and loaded at app startup
+2. **Filter Selection** — Users optionally filter by type, genre, mood, and year range
+3. **Recommendation Engine** — Matching items are filtered and one is selected at random
+4. **Repeat Protection** — The previous result is excluded from the next roll when possible
+5. **Rendering** — Results are displayed via Flask + Jinja2 templates
 
-Recommendation Engine: The app filters matching items and randomly selects one.
+---
 
-Repeat Protection: The previous recommendation is avoided when possible to keep results fresh.
+## Mood Guide
 
-Rendering: Results are displayed using Flask + Jinja templates.
+| Mood | What to Expect |
+|---|---|
+| **Hype** | Action-packed movies or high-intensity games |
+| **Chill** | Relaxing, low-stakes experiences |
+| **Cozy** | Comfort watches or slow-paced games |
+| **Thoughtful** | Story-driven or emotionally rich picks |
+| **Challenging** | Skill-testing games or heavy films |
 
-🎭 Mood Examples
-Hype – Action-packed movies or intense games
+---
 
-Chill – Relaxing, low-stress experiences
+## Project Structure
 
-Cozy – Comfort movies or slow-paced games
-
-Thoughtful – Story-driven or emotionally rich picks
-
-Challenging – Skill-testing games or heavy films
-
-🛠️ Technologies Used
-Backend: Flask (Python)
-
-Frontend: HTML, CSS (Jinja templates)
-
-Data Storage: JSON
-
-Randomization: Python standard library
-
-Dependency: Flask 3.0.3
-
-📝 Project Structure
-text
+```
 pickflix/
-├── app.py
-├── requirements.txt
+├── app.py                 # Flask app — routes and recommendation logic
+├── requirements.txt       # Python dependencies
 ├── README.md
 ├── data/
-│   └── items.json
+│   └── items.json         # Movies and games dataset
 ├── templates/
-│   └── index.html
+│   └── index.html         # Jinja2 HTML template
 └── static/
-    └── style.css
-🤝 Contributing
-Fork the repository
+    └── style.css          # Stylesheet
+```
 
-Create a feature branch: git checkout -b feature/cool-feature
+---
 
-Commit your changes: git commit -m "Add cool feature"
+## Tech Stack
 
-Push to the branch: git push origin feature/cool-feature
+- **Backend** — Flask (Python)
+- **Frontend** — HTML, CSS, Jinja2 templates
+- **Data** — JSON
+- **Randomization** — Python standard library (`random`)
 
-Open a Pull Request
+---
 
-📄 License
-This project is licensed under the MIT License — feel free to use, modify, and share it.
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch: `git checkout -b feature/your-feature`
+3. Commit your changes: `git commit -m "Add your feature"`
+4. Push to the branch: `git push origin feature/your-feature`
+5. Open a Pull Request
+
+---
+
+## License
+
+This project is licensed under the MIT License — see [LICENSE](LICENSE) for details.
+
+---
+
+<div align="center">
+  <sub>Built with Flask · No API keys required</sub>
+</div>
